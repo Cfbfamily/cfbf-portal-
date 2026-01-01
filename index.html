@@ -3,41 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Christ Fruitful Branch Family (CFBF)</title>
-    <!-- Bootstrap 5 CDN -->
+    <title>Christ Fruitful Branch Family | CFBF Portal</title>
+    <!-- Bootstrap 5 CDN for responsive design -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
+    <!-- Google Fonts for a modern, readable feel -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Open Sans', sans-serif; color: #333; background-color: #f8f9fa; }
+        body { font-family: 'Open Sans', sans-serif; color: #333; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .navbar-brand { color: #28a745 !important; font-weight: bold; }
-        .sidebar {
-            background-color: #fff;
-            min-height: 100vh;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-            padding-top: 80px;
-        }
-        .sidebar .nav-link {
-            color: #333;
-            padding: 12px 20px;
-            border-radius: 8px;
-            margin: 5px 10px;
-        }
-        .sidebar .nav-link:hover, .sidebar .nav-link.active {
-            background-color: #e8f5e9;
-            color: #28a745;
-        }
-        .welcome-header {
-            background: linear-gradient(rgba(40,167,69,0.8), rgba(40,167,69,0.9)), url('https://via.placeholder.com/1920x400?text=CFBF+Family+Dashboard') no-repeat center center/cover;
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://via.placeholder.com/1920x1080?text=CFBF+Family+Worship') no-repeat center center/cover;
             color: white;
-            border-radius: 15px;
-            padding: 60px 40px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
             text-align: center;
         }
-        .card { transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); }
-        .btn-success { background-color: #28a745; border: none; }
+        .btn-primary { background-color: #28a745; border: none; }
+        .btn-primary:hover { background-color: #218838; }
+        .section-bg { background-color: #f8f9fa; }
         footer { background-color: #343a40; color: white; }
     </style>
     <!-- Firebase SDKs (compat version - easy to use) -->
@@ -50,149 +34,137 @@
 </head>
 <body>
 
-    <!-- Top Navigation -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="dashboard.html">CFBF Portal</a>
-            <div class="d-flex align-items-center">
-                <span class="me-3">Hello, <strong id="userName">Member</strong>!</span>
-                <button class="btn btn-outline-danger btn-sm" id="logoutBtn">Logout</button>
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="#">CFBF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-primary mx-2" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary" href="register.html">Join Us</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid">
-        <div class="row">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Christ Fruitful Branch Family</h1>
+            <p class="lead fs-3 mb-4">Bearing Fruit Together in Faith, Love, and Family</p>
+            <p class="fs-5 mb-5">A welcoming community rooted in Christ, growing families through God's Word.</p>
+            <a href="#about" class="btn btn-primary btn-lg mx-2">Learn More</a>
+            <a href="register.html" class="btn btn-outline-light btn-lg mx-2">Become a Member</a>
+        </div>
+    </section>
 
-            <!-- Sidebar -->
-            <div class="col-md-3 col-lg-2 sidebar">
-                <nav class="nav flex-column">
-                    <a class="nav-link active" href="dashboard.html">Dashboard</a>
-                    <a class="nav-link" href="#events">Events</a>
-                    <a class="nav-link" href="#prayer">Prayer Requests</a>
-                    <a class="nav-link" href="#resources">Resources</a>
-                    <a class="nav-link" href="profile.html">My Profile</a>
-                    <a class="nav-link" href="#">Family Directory</a>
-                </nav>
-            </div>
-
-            <!-- Main Content -->
-            <div class="col-md-9 col-lg-10 offset-md-3 offset-lg-2 py-5 px-4">
-
-                <!-- Welcome Section -->
-                <div class="welcome-header mb-5">
-                    <h1 class="display-5">Welcome Back to the Family</h1>
-                    <p class="lead">Grow deeper in faith, connect with your brothers and sisters, and bear fruit together in Christ.</p>
+    <!-- About/Mission Section -->
+    <section id="about" class="py-5 section-bg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="mb-4">Our Mission</h2>
+                    <p class="lead">Inspired by John 15, we are the fruitful branch connected to Christ the Vine. CFBF is a family ministry dedicated to nurturing strong Christian homes, discipling generations, and spreading God's love.</p>
+                    <p>We gather for worship, Bible study, family events, and community outreach—helping every member bear lasting fruit in their faith journey.</p>
+                    <a href="#resources" class="btn btn-primary">Explore Resources</a>
                 </div>
-
-                <!-- Quick Stats/Overview Cards -->
-                <div class="row mb-5">
-                    <div class="col-md-4 mb-4">
-                        <div class="card text-center p-4 shadow-sm">
-                            <h3 class="text-success">3</h3>
-                            <p>Upcoming Events</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card text-center p-4 shadow-sm">
-                            <h3 class="text-success">5</h3>
-                            <p>New Announcements</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card text-center p-4 shadow-sm">
-                            <h3 class="text-success">12</h3>
-                            <p>Prayer Requests</p>
-                            <a href="#prayer" class="btn btn-success btn-sm mt-2">View All</a>
-                        </div>
-                    </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://via.placeholder.com/600x400?text=CFBF+Family+Gathering" alt="CFBF Family" class="img-fluid rounded shadow">
                 </div>
-
-                <!-- Recent Announcements -->
-                <h2 class="mb-4">Recent Announcements</h2>
-                <div class="row mb-5">
-                    <div class="col-md-6 mb-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5>New Year Family Gathering</h5>
-                                <p class="text-muted">Posted: January 01, 2026</p>
-                                <p>Join us for prayer, worship, and fellowship as we step into 2026 together.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5>Bible Study Series Begins</h5>
-                                <p class="text-muted">Posted: December 28, 2025</p>
-                                <p>"Abiding in the Vine" – A 8-week study on John 15 starting next week.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Upcoming Events -->
-                <h2 id="events" class="mb-4">Upcoming Events</h2>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow-sm">
-                            <img src="https://via.placeholder.com/400x200?text=Family+Bible+Study" class="card-img-top" alt="Event">
-                            <div class="card-body">
-                                <h5>Family Bible Study Night</h5>
-                                <p class="text-muted">January 15, 2026 | 7:00 PM</p>
-                                <a href="#" class="btn btn-outline-success btn-sm">RSVP</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow-sm">
-                            <img src="https://via.placeholder.com/400x200?text=Youth+Gathering" class="card-img-top" alt="Event">
-                            <div class="card-body">
-                                <h5>Youth Branch Gathering</h5>
-                                <p class="text-muted">January 22, 2026 | 6:00 PM</p>
-                                <a href="#" class="btn btn-outline-success btn-sm">RSVP</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Events/Announcements -->
+    <section id="events" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Upcoming Events & Announcements</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow">
+                        <img src="https://via.placeholder.com/400x250?text=Family+Bible+Study" class="card-img-top" alt="Event">
+                        <div class="card-body">
+                            <h5>Family Bible Study Night</h5>
+                            <p class="text-muted">January 15, 2026 | 7:00 PM</p>
+                            <p>Join us for an evening of Scripture and fellowship.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow">
+                        <img src="https://via.placeholder.com/400x250?text=Youth+Gathering" class="card-img-top" alt="Event">
+                        <div class="card-body">
+                            <h5>Youth Branch Gathering</h5>
+                            <p class="text-muted">January 22, 2026 | 6:00 PM</p>
+                            <p>Fun, games, and growing in faith for our young branches.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow">
+                        <img src="https://via.placeholder.com/400x250?text=Community+Outreach" class="card-img-top" alt="Event">
+                        <div class="card-body">
+                            <h5>Community Outreach Day</h5>
+                            <p class="text-muted">February 1, 2026 | All Day</p>
+                            <p>Serving our neighbors with love and compassion.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources/Sermons -->
+    <section id="resources" class="py-5 section-bg">
+        <div class="container">
+            <h2 class="text-center mb-5">Recent Sermons & Resources</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card shadow border-0">
+                        <div class="card-body">
+                            <h5>Abiding in the Vine</h5>
+                            <p class="text-muted">January 1, 2026</p>
+                            <a href="#" class="btn btn-outline-primary">Watch Sermon</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow border-0">
+                        <div class="card-body">
+                            <h5>Family Worship Guide</h5>
+                            <p class="text-muted">Download PDF</p>
+                            <a href="#" class="btn btn-outline-primary">Download</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow border-0">
+                        <div class="card-body">
+                            <h5>Prayer Requests</h5>
+                            <p class="text-muted">Share with the family</p>
+                            <a href="login.html" class="btn btn-outline-primary">Submit (Members)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="py-4 mt-5">
+    <footer class="py-5">
         <div class="container text-center">
-            <p class="mb-0">&copy; 2026 Christ Fruitful Branch Family (CFBF). John 15:5 – "I am the vine; you are the branches."</p>
+            <p class="mb-1">&copy; 2026 Christ Fruitful Branch Family (CFBF). All rights reserved.</p>
+            <p>Contact: info@cfbf.org | Follow us on social media</p>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Simple Auth Check & Logout (Activate with Firebase) -->
-    <script>
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-            // Logged in - show name
-            const name = user.displayName || user.email.split('@')[0];
-            const nameElements = document.querySelectorAll('#userName');
-            nameElements.forEach(el => el.textContent = name);
-        } else {
-            // Not logged in - go to login
-            window.location.href = 'login.html';
-        }
-    });
-
-    // Logout button
-    const logoutBtn = document.getElementById('logoutBtn');
-    if (logoutBtn) {
-        logoutBtn.addEventListener('click', () => {
-            firebase.auth().signOut().then(() => {
-                window.location.href = 'index.html';
-            });
-        });
-    }
-</script>
 </body>
-                      </html>
+</html>
